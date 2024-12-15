@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles/globals.css */
+.bg-primary-opacity-50 {
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.5
+  ); /* Adjust the rgba values to match your primary color */
+}
