@@ -1,6 +1,4 @@
-import aarpLogo from '@/public/assets/images/aarp.png';
 import aetnaLogo from '@/public/assets/images/aetna.png';
-import ameritasLogo from '@/public/assets/images/ameritas.jpg';
 import anthemLogo from '@/public/assets/images/anthem.png';
 import card1 from '@/public/assets/images/card1.svg';
 import card2 from '@/public/assets/images/card2.svg';
@@ -14,6 +12,8 @@ import profilePic1 from '@/public/assets/images/profile1.jpg';
 import profilePic2 from '@/public/assets/images/profile2.jpg';
 import profilePic3 from '@/public/assets/images/profile3.jpg';
 import profilePic4 from '@/public/assets/images/profile4.jpg';
+import prudential from '@/public/assets/images/Prudential.png';
+import transAmerica from '@/public/assets/images/TransAmerica.png';
 
 export const NAV_LINKS = [
   {
@@ -43,16 +43,16 @@ export const ClientFormDefaultValues = {
 
 export const LOGOS = [
   {
-    name: 'Aarp',
-    image: aarpLogo,
+    name: 'TransAmerica',
+    image: transAmerica,
+  },
+  {
+    name: 'Prudential',
+    image: prudential,
   },
   {
     name: 'Aetna',
     image: aetnaLogo,
-  },
-  {
-    name: 'Ameritas',
-    image: ameritasLogo,
   },
   {
     name: 'Anthem',
@@ -85,14 +85,14 @@ export const FEATURES = [
     color: 'bg-none',
     title: 'Healthcare in your fingertips',
     description:
-      "That's why we offer personalised support and guidance throughout the insurance process",
+      "Secure your future with our comprehensive health insurance. That's why we offer personalised support and guidance throughout the insurance process",
     image: card2,
   },
   {
     color: 'bg-primary bg-opacity-50',
-    title: 'Protect Your Loved Ones with Our Health Insurance',
+    title: 'Protect You and Your Loved Ones with Our Life Insurance',
     description:
-      "Whether you're looking to protect your family's health, your business, or your personal assets, our health insurance plans have got you covered.",
+      "Our plans guarantee that you and your loved one's are safeguarded against life's uncertainity. Choose a plan that suits your unique need and rest easy knowing that you're covered.",
     image: card1,
   },
   {

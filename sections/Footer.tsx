@@ -43,7 +43,10 @@ const Footer = () => {
             </nav>
 
             <div className="flex gap-4 mt-8">
-              <Link href="/">
+              <Link
+                href="https://www.facebook.com/profile.php?id=61570214084742"
+                target="__blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
