@@ -1,8 +1,11 @@
 'use client';
 
+import 'react-phone-number-input/style.css';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addDoc, collection } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
+import PhoneInput from 'react-phone-number-input';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -81,9 +84,16 @@ const ClientForm = () => {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="lg:text-xl">Phone Number</FormLabel>
+              <FormLabel className="lg:text-xl">Phone Number</FormLabel>{' '}
               <FormControl className="lg:text-xl">
-                <Input placeholder="Number to communicate" {...field} />
+                <PhoneInput
+                  {...field}
+                  defaultCountry="US"
+                  international
+                  withCountryCallingCode
+                  placeholder="Enter phone number"
+                  className="mt-2 h-9 rounded-md px-3 text-sm border bg-dark-400  placeholder:text-dark-600 border-dark-400 !important;"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
