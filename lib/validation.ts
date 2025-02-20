@@ -9,6 +9,7 @@ export const ClientFormSchema = z.object({
   phone: z.string().refine((phone) => /^\+\d{10,15}$/.test(phone), {
     message: 'Invalid phone number',
   }),
+  insuranceType: z.string(),
   budget: z
     .string()
     .min(2, { message: 'Budget must be at least 2 characters.' }),
