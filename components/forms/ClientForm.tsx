@@ -18,6 +18,13 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { db } from '@/lib/firebaseConfig';
 
 import { ClientFormSchema } from '../../lib/validation';
@@ -29,6 +36,7 @@ const ClientForm = () => {
       name: '',
       email: '',
       phone: '',
+      insuranceType: '',
       budget: '',
     },
   });
@@ -36,6 +44,7 @@ const ClientForm = () => {
   const { reset } = form;
 
   const onSubmit = async (data: z.infer<typeof ClientFormSchema>) => {
+    console.log('Data: ', data);
     try {
       await addDoc(collection(db, 'quotes'), data);
       alert('Quote request sent successfully!');
@@ -85,7 +94,7 @@ const ClientForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="lg:text-xl">Phone Number</FormLabel>{' '}
-              <FormControl className="lg:text-xl">
+              <FormControl className="lg:text-xl w-[180px]">
                 <PhoneInput
                   {...field}
                   defaultCountry="US"
@@ -94,6 +103,27 @@ const ClientForm = () => {
                   placeholder="Enter phone number"
                   className="mt-2 h-9 rounded-md px-3 text-sm border bg-dark-400  placeholder:text-dark-600 border-dark-400 !important;"
                 />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="insuranceType"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="lg:text-xl">Insurance Type</FormLabel>
+              <FormControl className="lg:text-xl">
+                <Select onValueChange={field.onChange} value={field.value}>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="health">Health</SelectItem>
+                    <SelectItem value="life">Life</SelectItem>
+                  </SelectContent>
+                </Select>
               </FormControl>
               <FormMessage />
             </FormItem>
